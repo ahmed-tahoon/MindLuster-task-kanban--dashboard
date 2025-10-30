@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { Task, TaskFormData } from '@/types/task';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+// Prefer external API if provided; otherwise, use Next.js route handlers
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
+export const isFallbackApiBase = API_BASE_URL.startsWith('/api');
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,

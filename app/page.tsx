@@ -1,12 +1,13 @@
 'use client';
 
-import { Box, Container, Typography, Button, AppBar, Toolbar, Chip } from '@mui/material';
-import { Add as AddIcon, ViewKanban as KanbanIcon } from '@mui/icons-material';
+import { Box, Container, Typography, Button, AppBar, Toolbar, Chip, Alert, IconButton } from '@mui/material';
+import { Add as AddIcon, ViewKanban as KanbanIcon, Close as CloseIcon } from '@mui/icons-material';
 import { useState } from 'react';
 import KanbanBoard from '@/components/KanbanBoard';
 import TaskModal from '@/components/TaskModal';
 import SearchBar from '@/components/SearchBar';
 import { useCreateTask, useUpdateTask } from '@/hooks/useTasks';
+import { isFallbackApiBase } from '@/services/api';
 import { Task } from '@/types/task';
 import Link from 'next/link';
 import AddColumnDialog from '@/components/AddColumnDialog';
@@ -21,6 +22,8 @@ export default function Home() {
   const createTask = useCreateTask();
   const updateTask = useUpdateTask();
   const [addColumnOpen, setAddColumnOpen] = useState(false);
+  const isFallbackApi = isFallbackApiBase;
+  const [showFallbackNote, setShowFallbackNote] = useState(true);
 
   const handleCreateTask = (data: { title: string; description: string; column: any }) => {
     createTask.mutate(data);
@@ -93,6 +96,35 @@ export default function Home() {
           </Box>
         </Toolbar>
       </AppBar>
+
+      {isFallbackApi && showFallbackNote && (
+        <Box sx={{ px: { xs: 2, sm: 3 }, pt: 2 }}>
+          <Container maxWidth="lg" sx={{ px: 0 }}>
+            <Alert
+              severity="info"
+              variant="filled"
+              sx={{ borderRadius: 2, boxShadow: '0 8px 24px rgba(0,0,0,0.1)', pr: 6, py: 2 }}
+              action={
+                <IconButton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                  onClick={() => setShowFallbackNote(false)}
+                >
+                  <CloseIcon fontSize="small" />
+                </IconButton>
+              }
+            >
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.25 }}>
+                Using Next.js fallback API
+              </Typography>
+              <Typography variant="body2">
+                No external server detected. Data is stored in-memory and may reset after redeploys or cold starts.
+              </Typography>
+            </Alert>
+          </Container>
+        </Box>
+      )}
 
       {/* Main Content */}
       <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
