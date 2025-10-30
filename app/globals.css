@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+html {
+  /* Soft animated gradient background */
+  background: radial-gradient(40vw 40vw at -10% -10%, #e0f2fe 0%, transparent 60%),
+              radial-gradient(35vw 35vw at 110% -10%, #ede9fe 0%, transparent 60%),
+              radial-gradient(45vw 45vw at 50% 110%, #dcfce7 0%, transparent 60%),
+              linear-gradient(120deg, #f8fafc, #f1f5f9 50%, #eef2ff);
+  background-size: 200% 200%, 200% 200%, 200% 200%, 200% 200%;
+  background-attachment: fixed;
+  animation: subtleGradient 24s ease-in-out infinite;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: transparent;
+}
+
+@keyframes subtleGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Smooth drag animations */
+.dragging {
+  opacity: 0.5;
+  cursor: grabbing !important;
+}
+
+.drag-overlay {
+  cursor: grabbing;
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: rotate(3deg);
+}
+
+/* Glass surface utility for modern UI */
+.glass-surface {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+}
+

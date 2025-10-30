@@ -1,0 +1,102 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Design homepage",
+      "description": "Include hero section with modern UI elements",
+      "column": "review",
+      "position": 8
+    },
+    {
+      "id": "3",
+      "title": "Create API endpoints",
+      "description": "Build RESTful API for task management",
+      "column": "done",
+      "position": 6.5
+    },
+    {
+      "id": "4",
+      "title": "Implement drag and drop",
+      "description": "Add smooth drag-and-drop functionality to Kanban board",
+      "column": "backlog",
+      "position": 5
+    },
+    {
+      "id": "5",
+      "title": "Code review for authentication",
+      "description": "Review security practices and token handling",
+      "column": "review",
+      "position": 7.75
+    },
+    {
+      "id": "6",
+      "title": "Database schema design",
+      "description": "Finalized schema for production deployment",
+      "column": "review",
+      "position": 7.5
+    },
+    {
+      "id": "7",
+      "title": "Setup CI/CD pipeline",
+      "description": "Configure GitHub Actions for automated testing",
+      "column": "backlog",
+      "position": 7
+    },
+    {
+      "id": "8",
+      "title": "Mobile responsive design",
+      "description": "Ensure all pages work seamlessly on mobile devices",
+      "column": "in-progress",
+      "position": 2
+    },
+    {
+      "id": "9",
+      "title": "Performance optimization",
+      "description": "Optimize bundle size and lazy load components",
+      "column": "in-progress",
+      "position": 1.5
+    },
+    {
+      "id": "10",
+      "title": "User profile page",
+      "description": "Create comprehensive user profile with avatar upload",
+      "column": "in-progress",
+      "position": 4
+    },
+    {
+      "id": "11",
+      "title": "Dark mode support",
+      "description": "Add theme toggle with persistent preferences",
+      "column": "in-progress",
+      "position": 3
+    },
+    {
+      "id": "13",
+      "title": "Data export feature",
+      "description": "Allow users to export tasks as CSV or JSON",
+      "column": "done",
+      "position": 9
+    },
+    {
+      "id": "15",
+      "title": "Email notifications",
+      "description": "Send digest emails for task updates",
+      "column": "in-progress",
+      "position": 5
+    },
+    {
+      "title": "wrewr",
+      "description": "erwer",
+      "column": "backlog",
+      "id": "1761826723136",
+      "position": 6
+    },
+    {
+      "title": "fsdf",
+      "description": "dsfsdf",
+      "column": "done",
+      "id": "1761826729770",
+      "position": 8.125
+    }
+  ]
+}
