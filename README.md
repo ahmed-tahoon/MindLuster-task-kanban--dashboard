@@ -118,39 +118,3 @@ Navigate to the "jQuery Bonus" page from the top navigation chip to see:
 | `npm run start` | Start production server |
 | `npm run lint` | Run ESLint for code quality |
 | `npm run api` | Start json-server mock API (port 4000) |
-
-## 🏗️ Key Technical Decisions
-
-### 1. Why @dnd-kit over react-beautiful-dnd?
-- Better TypeScript support
-- More performant with virtual scrolling
-- Actively maintained
-- Supports touch devices out of the box
-
-### 2. Zustand vs Redux
-- Simpler API with less boilerplate
-- Better TypeScript inference
-- Smaller bundle size
-- Easier to integrate with React Query
-
-### 3. React Query Benefits
-- Automatic caching and background refetching
-- Optimistic updates with rollback
-- Built-in loading and error states
-- Infinite scroll support
-
-### 4. Material UI Choice
-- Comprehensive component library
-- Built-in theming system
-- Excellent TypeScript support
-- Production-ready components
-
-## 🎨 Design Patterns Used
-
-1. **Custom Hooks**: Encapsulate data fetching and mutations
-2. **Compound Components**: TaskColumn contains TaskCards
-3. **Render Props**: DnD overlay for drag feedback
-4. **Optimistic Updates**: Instant UI updates with automatic rollback
-5. **Debouncing**: Search input optimization
-6. **Event Delegation**: jQuery bonus task for dynamic elements
-
